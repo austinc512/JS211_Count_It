@@ -50,7 +50,8 @@ const paragraph = "The quick brown fox jumps over the lazy dog. It barked.";
 // regular expression finds characters a-z
 // regex also uses global and case-insensitive flags ('gi' at the end)
 // g flag: catches ALL matches to the regular expression
-// i flag:
+// i flag: catches lower and uppercase letters
+// the i flag isn't even necessary b/c I use .toLowerCase() prior to matching the regex
 const regex = /[a-z]/gi;
 const found = paragraph.toLowerCase().match(regex);
 
