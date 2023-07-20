@@ -1,0 +1,19 @@
+{
+  "name": "js211_count_it",
+  "version": "1.0.0",
+  "description": "Given a sentence, paragraph or novel, count the letters in the string. Ignore whitespace and anything not [a-z][A-Z], i.e. punctuations and numbers.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinc512/JS211_Count_It.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austinc512/JS211_Count_It/issues"
+  },
+  "homepage": "https://github.com/austinc512/JS211_Count_It#readme"
+}
