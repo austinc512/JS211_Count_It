@@ -31,6 +31,7 @@ Push Yourself Further
 clarify the problem:
 
 d:1 e:1 h:1 l:3 o:2 r:1 w:1
+
 ^^ this looks like an object.
 
 Create an object that can be used as a counter.
