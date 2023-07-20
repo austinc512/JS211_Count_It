@@ -1,4 +1,3 @@
-// const assert = require("assert");
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -6,7 +5,7 @@ const rl = readline.createInterface({
 });
 
 // Create a counter object:
-const counter = {
+const testCounter = {
   a: 0,
   b: 0,
   c: 0,
@@ -35,27 +34,23 @@ const counter = {
   z: 0,
 };
 
-// d:1 e:1 h:1 l:3 o:2 r:1 w:1
-
 /*
 User will input a string.
-
 use a regular expression to filter for only letters [a-z][A-Z]
-
 regex: /[a-z]/gi
 */
 
 // example paragraph:
-const paragraph = "The quick brown fox jumps over the lazy dog. It barked.";
+const testParagraph = "The quick brown fox jumps over the lazy dog. It barked.";
 // regular expression finds characters a-z
 // regex also uses global and case-insensitive flags ('gi' at the end)
 // g flag: catches ALL matches to the regular expression
 // i flag: catches lower and uppercase letters
 // the i flag isn't even necessary b/c I use .toLowerCase() prior to matching the regex
 const regex = /[a-z]/gi;
-const found = paragraph.toLowerCase().match(regex);
+const found = testParagraph.toLowerCase().match(regex);
 
-console.log(found); // we have an array of all letters from the paragraph
+// console.log(found); // we have an array of all letters from the paragraph
 
 /*
 found:
@@ -70,16 +65,16 @@ found:
 ]
 */
 
-// we need to iterate over the array and increment the properties of the counter object
+// we need to iterate over the array and increment the properties of the testCounter object
 
 for (item of found) {
-  counter[item]++;
+  testCounter[item]++;
 }
 
-console.log(counter);
+// console.log(testCounter);
 
 /*
-counter:
+testCounter:
 {
   a: 2,
   b: 2,
@@ -114,23 +109,77 @@ counter:
 
 let outputStr = "";
 
-for (const [key, value] of Object.entries(counter)) {
+for (const [key, value] of Object.entries(testCounter)) {
   outputStr += ` ${key}: ${value}`;
   outputStr.trimStart();
 }
 
-console.log(outputStr);
+// console.log(outputStr);
 
 /*
 current outputStr:
  a: 2 b: 2 c: 1 d: 2 e: 4 f: 1 g: 1 h: 2 i: 2 j: 1 k: 2 l: 1 m: 1 n: 1 o: 4 p: 1 q: 1 r: 3 s: 1 t: 3 u: 2 v: 1 w: 1 x: 1 y: 1 z: 1
 */
 
+// translating above logic into a series of function calls for terminal application
+function cleanInput(str) {
+  const regex = /[a-z]/gi;
+  const filtered = str.toLowerCase().match(regex);
+  counter(filtered);
+}
+
+function counter(arr) {
+  const letterCounter = {
+    a: 0,
+    b: 0,
+    c: 0,
+    d: 0,
+    e: 0,
+    f: 0,
+    g: 0,
+    h: 0,
+    i: 0,
+    j: 0,
+    k: 0,
+    l: 0,
+    m: 0,
+    n: 0,
+    o: 0,
+    p: 0,
+    q: 0,
+    r: 0,
+    s: 0,
+    t: 0,
+    u: 0,
+    v: 0,
+    w: 0,
+    x: 0,
+    y: 0,
+    z: 0,
+  };
+  for (item of arr) {
+    letterCounter[item]++;
+  }
+
+  let outputStr = "";
+  for (const [key, value] of Object.entries(letterCounter)) {
+    outputStr += ` ${key}: ${value}`;
+  }
+  outputStr.trimStart();
+  console.log(outputStr);
+}
+
 // terminal application stuff:
 const getPrompt = () => {
-  rl.question("Enter Something: ", (something) => {
-    console.log(`you entered: ${something}`);
-    rl.close();
+  rl.question("Enter your String: ", (str) => {
+    cleanInput(str);
+    rl.question("Play again? (y/n)", (str) => {
+      if (str === "y" || str === "Y") {
+        getPrompt();
+      } else {
+        rl.close();
+      }
+    });
   });
 };
 
