@@ -37,15 +37,26 @@ if (typeof describe === 'function') {
 };
 
 //ignores capitolization
-//ignores everything except letters
+describe('#countWords()', () => {
+  it('ignore capitolization', () => {
+    assert.deepEqual(countWords('WORDS'), ('d:1 o:1 r:1 s:1 w:1') )
+  });
+});
 
-    
-//   })
-// })
 
-
+//ignores everything except letters. No space, numbers, or punctuation. 
+describe('#countWords()', () => {
+  it('only return letters as result', () => {
+    assert.deepEqual(countWords('w,o. r,ds3'), ('d:1 o:1 r:1 s:1 w:1') )
+  });
+});
 //should return in alphabetical order
-  //does not include punctuation
+describe('#countWords()', () => {
+  it('should return characters in alphebetical order', () => {
+    assert.deepEqual(countWords('cba'), ('a:1 b:1 c:1') )
+  });
+});
+
   // does not include spaces
   
   
