@@ -10,14 +10,6 @@
 */
 
 const countWords = string => {
-    // let wordList = string.toLowerCase().replace(/\s/g, '').split('')
-    // return String(wordList.reduce((acc, word) => {
-    //   acc[word] = (acc[word] || 0) + 1
-    //    // incremements the count of the current letter "word" in the
-    //    // accumulator object "acc". If letter doesn't exist in "acc",
-    //    // it sets its count to 1.
-    //   return acc
-    // }, {}))
     let wordList = string.toLowerCase().match(/[a-z]/gi)
    return JSON.stringify(
       wordList.reduce((acc, word) => {
