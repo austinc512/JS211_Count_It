@@ -8,9 +8,11 @@
  * .reduce takes callback with 2 arguments: "acc" and the current letter "word".
  * 
 */
+const assert = require('assert');
+
 
 const countWords = string => {
-    let wordList = string.toLowerCase().match(/[a-z]/gi)
+    let wordList = string.toLowerCase().match(/[a-z]/gi).sort()
    return JSON.stringify(
       wordList.reduce((acc, word) => {
         acc[word] = (acc[word] || 0) + 1
@@ -23,10 +25,26 @@ const countWords = string => {
   }
   
 console.log(countWords('How many of each letter are there in this string'))
+//TESTS
+if (typeof describe === 'function') {
+  
+  //Returns an objet representing the frequencies of each letter in string. 
+  describe('#countWords()', () => {
+    it('should take a string and return a list of characters and how frequently they appear in the strting', () => {
+      assert.deepEqual(countWords('words'), ('d:1 o:1 r:1 s:1 w:1') )
+    });
+  });
+};
 
-  //Returns an objet representing the frequencies of each letter in string.
-  //does it produce valid output from a string
-  //doesnt take capitolization into consideration
+//ignores capitolization
+//ignores everything except letters
+
+    
+//   })
+// })
+
+
+//should return in alphabetical order
   //does not include punctuation
   // does not include spaces
   
