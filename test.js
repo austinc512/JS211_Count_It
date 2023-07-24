@@ -10,7 +10,7 @@
 */
 
 const countWords = string => {
-    let wordList = string.toLowerCase().replace(/\s/g, '').split('')
+    let wordList = string.toLowerCase().replace(/\s/gi, '').split('')
     return wordList.reduce((acc, word) => {
       acc[word] = (acc[word] || 0) + 1
        // incremements the count of the current letter "word" in the
@@ -20,7 +20,8 @@ const countWords = string => {
     }, {})
   }
   
-  countWords('How many of each letter are there in this string')
+  countWords('How many of each letter are there in this string');
+  console.log(countWords('How many of each letter are there in this string'));
   //Returns an objet representing the frequencies of each letter in string.
   
   
