@@ -43,3 +43,5 @@ iterate over the input string, and incrememt the counter object's property
 a:4 b: 1, c: 2, etc.
 
 return the properties of the counter object.
+
+test test test
