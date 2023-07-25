@@ -7,7 +7,8 @@
     "test": "mocha test.js"
   },
   "dependencies": {
-    "assert": "^2.0.0"
+    "assert": "^2.0.0",
+    "mocha": "^10.2.0"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,3 @@
   "homepage": "https://github.com/austinc512/JS211_Count_It#readme",
   "keywords": []
 }
-
-
-  
-
