@@ -1,10 +1,10 @@
 const countWords = () => {
   
-    let string = document.querySelector(".user-input").value
+    let string = document.querySelector(".user-input").value;
     let wordList = string.toLowerCase().match(/[a-z]/gi).sort()
     document.querySelector(".word-output").innerHTML = JSON.stringify(
       wordList.reduce((acc, word) => {
-        acc[word] = (acc[word] || 0) + 1
+        acc[word] = (acc[word] || 0) + 1;
         return acc
       }, {})
     )
@@ -12,8 +12,7 @@ const countWords = () => {
       .replace(/['"]+/g, "")
       .replace(/[{}]+/g, "")
   }
-  
 
-  //gi
-  //g flag = means global
-  //i flag- case insensitive
+//gi
+//g flag = means global
+//i flag- case insensitive

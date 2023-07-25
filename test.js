@@ -1,10 +1,9 @@
-
-/** 
+/**
  * 1. Define function, "countWords"
  * 2. Convert input 'string to lowercase, make case-insensitive
  * 3. Use .replace method with regex "/\s/g" to remove white space
  * 4. Use .split to separate to individual characters
- * 5. Callback function: 
+ * 5. Callback function:
  * .reduce takes callback with 2 arguments: "acc" and the current letter "word".
  * 
 */
@@ -12,10 +11,10 @@ const assert = require('assert');
 
 
 const countWords = string => {
-    let wordList = string.toLowerCase().match(/[a-z]/gi).sort()
+    let wordList = string.toLowerCase().match(/[a-z]/gi).sort();
    return JSON.stringify(
       wordList.reduce((acc, word) => {
-        acc[word] = (acc[word] || 0) + 1
+        acc[word] = (acc[word] || 0) + 1;
         return acc
       }, {})
     )
@@ -58,22 +57,3 @@ describe('#countWords()', () => {
 });
 
   // does not include spaces
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
