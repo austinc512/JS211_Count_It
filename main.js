@@ -48,7 +48,7 @@ const testParagraph = "The quick brown fox jumps over the lazy dog. It barked.";
 // i flag: catches lower and uppercase letters
 // the i flag isn't even necessary b/c I use .toLowerCase() prior to matching the regex
 const regex = /[a-z]/gi;
-const found = testParagraph.toLowerCase().match(regex);
+const found = testParagraph.toLowerCase().match(regex).sort();
 
 // console.log(found); // we have an array of all letters from the paragraph
 
