@@ -23,9 +23,9 @@ const countWords = (string) => {
 };
 
 console.log(countWords("How many of each letter are there in this string"));
-//TESTS
+// TESTS
 if (typeof describe === "function") {
-  //Returns an objet representing the frequencies of each letter in string.
+  // Returns an objet representing the frequencies of each letter in string.
   describe("#countWords()", () => {
     it("should take a string and return a list of characters and how frequently they appear in the strting", () => {
       assert.deepEqual(countWords("words"), "d:1 o:1 r:1 s:1 w:1");
@@ -33,35 +33,35 @@ if (typeof describe === "function") {
   });
 }
 
-//should return in alphabetical order
+// should return in alphabetical order
 describe("#countWords()", () => {
   it("should return characters in alphebetical order", () => {
     assert.deepEqual(countWords("cba"), "a:1 b:1 c:1");
   });
 });
 
-//ignores capitolization
+// ignores capitalization
 describe("#countWords()", () => {
   it("ignore capitolization", () => {
     assert.deepEqual(countWords("WORDS"), "d:1 o:1 r:1 s:1 w:1");
   });
 });
 
-//ignores everything except letters. No space, numbers, or punctuation.
+// ignores everything except letters. No space, numbers, or punctuation.
 describe("#countWords()", () => {
   it("should not include punctuation", () => {
     assert.deepEqual(countWords("w,o. r,ds"), "d:1 o:1 r:1 s:1 w:1");
   });
 });
 
-//should ignore spaces
+// should ignore spaces
 describe("#countWords()", () => {
   it("should not return blank spaces", () => {
     assert.deepEqual(countWords("wo rds"), "d:1 o:1 r:1 s:1 w:1");
   });
 });
 
-//ignores numbers
+// should ignores numbers
 describe("#countWords()", () => {
   it("should not return numbers", () => {
     assert.deepEqual(countWords("w33ords"), "d:1 o:1 r:1 s:1 w:1");
