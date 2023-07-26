@@ -13,7 +13,7 @@ const countWords = (string) => {
     wordList.reduce((acc, word) => {
       acc[word] = (acc[word] || 0) + 1;
       return acc;
-      // the reduce method will fill the object with all of the necessary letter counters, and increment them accordingly as we iterate over the wordList array.
+      // As we iterate over the wordList array, the reduce method will fill the object with all of the necessary letter counters and increment them accordingly.
     }, {})
   )
     .replace(/[, ]+/g, " ")
